@@ -28,7 +28,7 @@ func init() {
 
 	port, err := strconv.Atoi(os.Getenv("DB_PORT"))
 	if err != nil {
-		slog.Error("Invalid Port: %v", err)
+		log.Fatalf("Invalid Port: %v", err)
 	}
 	config.ConnConfig.Port = uint16(port)
 	config.ConnConfig.Host = os.Getenv("DB_HOST")
